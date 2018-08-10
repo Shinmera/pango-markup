@@ -1,0 +1,254 @@
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="utf-8"> <title>Pango Markup</title> <style>html body{margin:0 auto 0 auto;padding:20px;max-width:1024px;font-family:sans-serif;font-size:14pt;overflow-y:scroll;}html body a{text-decoration:none;}html body a[href]{color:#0055AA;}html body a[href]:hover{color:#0088EE;}html body pre{background:#FAFAFA;border:1px solid #DDDDDD;padding:0.75em;overflow-x:auto;}html body pre >code a[href]{color:#223388;}article.system h1,article.system h2,article.system h3,article.system h4,article.system h5,article.system h6{margin:0.2em 0 0.1em 0;text-indent:1em;}article.system >header{text-align:center;}article.system >header img.logo{display:block;margin:auto;max-height:170px;}article.system >header h1{display:inline-block;text-indent:0;font-size:2.5em;}article.system >header .version{vertical-align:bottom;}article.system >header .languages{margin-top:-0.5em;text-transform:capitalize;}article.system >header .description{margin:0;}article.system >header .pages{margin-top:0.5em;font-size:1.2em;text-transform:capitalize;}article.system >header .pages a{display:inline-block;padding:0 0.2em;}article.system >section{margin:1em 0 1em 0;}article.system #index >ul{list-style:none;margin:0;padding:0;}article.system .row label{display:inline-block;min-width:6em;}article.system #system .row{display:flex;}article.system #system #dependencies{display:inline;margin:0;padding:0;}article.system #system #dependencies li{display:inline;padding:0 0.2em;}article.definition{margin:1em 0 0 0;}article.definition >header h1,article.definition >header h2,article.definition >header h3,article.definition >header h4,article.definition >header h5,article.definition >header h6{text-indent:0;display:inline-block;}article.definition >header ul{display:inline-block;list-style:none;margin:0;padding:0;}article.definition >header ul li{display:inline-block;padding:0 0.2em 0 0;}article.definition >header .visibility{display:none;}article.definition >header .visibility,article.definition >header .type{text-transform:lowercase;}article.definition >header .source-link{visibility:hidden;float:right;}article.definition >header .source-link:after{visibility:visible;content:"[SRC]";}article.definition .docstring{margin:0 0 0 1em;}article.definition .docstring pre{font-size:0.8em;white-space:pre-wrap;}.definition.package >header ul.nicknames{display:inline-block;list-style:none;margin:0;padding:0 0 0 1em;}.definition.package >header ul.nicknames li{display:inline;}.definition.package >header ul.nicknames:before{content:"(";}.definition.package >header ul.nicknames:after{content:")";}.definition.package ul.definitions{margin:0;list-style:none;padding:0 0 0 0.5em;}.definition.callable >header .name:before,.definition.type >header .name:before{content:"(";font-weight:normal;}.definition.callable >header .arguments:after,.definition.type >header .arguments:after{content:")";}.definition li>mark{background:none;border-left:0.3em solid #0088EE;padding-left:0.3em;display:block;}</style> </head> <body> <article class="system"> <header>  <h1>pango-markup</h1> <span class="version">1.0.0</span> <nav class="languages">  <a href="index.html">English</a>  </nav> <p class="description">A small library to generate pango-style text markup.</p> <nav class="pages">  <a href="index.html">pango markup</a>  </nav> </header> <section id="documentation"><h2>About Pango-Markup</h2> <p>This is a small library to handle marking up text in the <a href="https://developer.gnome.org/pango/stable/PangoMarkupFormat.html">Pango-style markup</a> for you.</p> <h2>How To</h2> <p>Marking up text is fairly easy. All you need to do is invoke <code>markup-text</code> with a list of regions and markup descriptions:</p> <pre><code>(<a href="#FUNCTION%20PANGO-MARKUP%3AMARKUP-REGIONS" class="xref">pango-markup:markup-regions</a> &quot;1 22 333&quot;
+  '((0 1 :color red)
+    (5 8 :font (:family &quot;monospace&quot;))))
+; =&gt; &quot;&lt;span color='red'&gt;1&lt;/span&gt; 22 &lt;span font_family='monospace'&gt;333&lt;/span&gt;&quot;
+</code></pre> <p>It's also possible to nest markup tags:</p> <pre><code>(<a href="#FUNCTION%20PANGO-MARKUP%3AMARKUP-REGIONS" class="xref">pango-markup:markup-regions</a> &quot;12321&quot;
+  '((0 5 :underline T)
+    (1 4 :strike T)))
+; =&gt; &quot;&lt;span underline='single'&gt;1&lt;span strikethrough='true'&gt;232&lt;/span&gt;1&lt;/span&gt;&quot;
+</code></pre> <p>See the <code><a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">markup</a></code> and <code><a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">font</a></code> class descriptions and their accessors for a list of possible options.</p> </section>  <section id="system"> <h2>System Information</h2>  <div class="row"> <label for="version">Version:</label> <a id="version">1.0.0</a> </div>   <div class="row"> <label for="dependencies">Dependencies:</label> <ul id="dependencies"><li><a class="external" href="https://github.com/Shinmera/documentation-utils">documentation-utils</a></li></ul> </div>   <div class="row"> <label for="author">Author:</label> <a id="author" href="mailto:shinmera@tymoon.eu">Nicolas Hafner</a> </div>   <div class="row"> <label for="license">License:</label> <a id="license" href="https://tldrlegal.com/search?q=Artistic">Artistic</a> </div>   <div class="row"> <label for="homepage">Homepage:</label> <a id="homepage" href="https://github.com/Shinmera/pango-markup">https://github.com/Shinmera/pango-markup</a> </div>  </section>  <section id="index"> <h2>Definition Index</h2> <ul> <li> <article class="definition package" id="PACKAGE PANGO-MARKUP"> <header> <h3> <a href="#PACKAGE%20PANGO-MARKUP">PANGO-MARKUP</a> </h3> <ul class="nicknames"> <li>ORG.SHIRAKUMO.PANGO-MARKUP</li> </ul>  <a class="source-link" href="https://github.com/Shinmera/pango-markup/blob/master/package.lisp#L7">Source</a>  </header> <div class="docstring"><i>No documentation provided.</i></div> <ul class="definitions"> <li> <article class="definition class" id="CLASS PANGO-MARKUP:FONT"> <header> <span class="visibility">EXTERNAL</span> <span class="type">CLASS</span> <h4 class="name"> <a href="#CLASS%20PANGO-MARKUP%3AFONT">FONT</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"></ul>  <a class="source-link" href="https://github.com/Shinmera/pango-markup/blob/master/pango.lisp#L48">Source</a>  </header> <div class="docstring"><pre>This class represents all possible font features that can be used within a markup block.
+
+Any font property that is not a boolean can also be NIL, in which case
+the value is not changed and instead inherited from the surrounding
+context.
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFAMILY" class="xref">FAMILY</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASIZE" class="xref">SIZE</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTYLE" class="xref">STYLE</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AWEIGHT" class="xref">WEIGHT</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AVARIANT" class="xref">VARIANT</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTRETCH" class="xref">STRETCH</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFEATURES" class="xref">FEATURES</a></pre></div> </article> </li>  <li> <article class="definition class" id="CLASS PANGO-MARKUP:MARKUP"> <header> <span class="visibility">EXTERNAL</span> <span class="type">CLASS</span> <h4 class="name"> <a href="#CLASS%20PANGO-MARKUP%3AMARKUP">MARKUP</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"></ul>  <a class="source-link" href="https://github.com/Shinmera/pango-markup/blob/master/pango.lisp#L65">Source</a>  </header> <div class="docstring"><pre>This class represents markup information for a region of text.
+
+Any markup property that is not a boolean can also be NIL, in which
+case the value is not changed and instead inherited from the
+surrounding context.
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFOREGROUND" class="xref">FOREGROUND</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ABACKGROUND" class="xref">BACKGROUND</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AUNDERLINE" class="xref">UNDERLINE</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ARISE" class="xref">RISE</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTRIKETHROUGH" class="xref">STRIKETHROUGH</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFALLBACK" class="xref">FALLBACK</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ALANGUAGE" class="xref">LANGUAGE</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ALETTER-SPACING" class="xref">LETTER-SPACING</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AGRAVITY" class="xref">GRAVITY</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ATAG" class="xref">TAG</a>
+See <a href="#FUNCTION%20PANGO-MARKUP%3AMARKUP-REGIONS" class="xref">MARKUP-REGIONS</a></pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION PANGO-MARKUP:ESCAPE-CHAR"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20PANGO-MARKUP%3AESCAPE-CHAR">ESCAPE-CHAR</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">CHAR</li>  <li class="argument">STREAM</li> </ul>  <a class="source-link" href="https://github.com/Shinmera/pango-markup/blob/master/pango.lisp#L15">Source</a>  </header> <div class="docstring"><pre>Escapes the given char if necessary and writes it to stream.
+
+This makes the following substitutions:
+  &lt;  ::= &amp;lt;
+  &gt;  ::= &amp;gt;
+  &amp;  ::= &amp;amp;
+  '  ::= &amp;#39;
+Any other character is written verbatim to the stream.</pre></div> </article> </li>  <li> <article class="definition function callable" id="FUNCTION PANGO-MARKUP:MARKUP-REGIONS"> <header> <span class="visibility">EXTERNAL</span> <span class="type">FUNCTION</span> <h4 class="name"> <a href="#FUNCTION%20PANGO-MARKUP%3AMARKUP-REGIONS">MARKUP-REGIONS</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">TEXT</li>  <li class="argument">REGIONS</li> </ul>  <a class="source-link" href="https://github.com/Shinmera/pango-markup/blob/master/pango.lisp#L184">Source</a>  </header> <div class="docstring"><pre>Marks up the given text using the list of markup regions.
+
+Each entry in the region list should be of the following form:
+
+  REGION ::= (START END . MARKUP)
+  START  --- An integer describing the index in the text at which
+             the markup should start applying.
+  END    --- An integer describing the index up until which the markup
+             should apply.
+  MARKUP --- Either a list of MARKUP initargs, or a MARKUP instance.
+
+For instance, the following invocation:
+
+  (markup-regions &quot;1 22 333&quot;
+    '((0 1 :color red)
+      (5 8 :font (:family &quot;monospace&quot;))))
+
+Produces the following result:
+
+  &lt;span color='red'&gt;1&lt;/span&gt; 22 &lt;span font_family='monospace'&gt;333&lt;/span&gt;
+
+Note that while it is allowed to nest markup regions, this function
+makes no attempt at detecting and warning about invalid region
+combinations such as ((1 3 ..) (2 4 ..)).
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:BACKGROUND"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ABACKGROUND">BACKGROUND</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the background colour of the markup region.
+
+A colour can either be the name of a colour as a string, an encoded
+RGB integer, or a list of R, G, B, and optional A elements with each
+element being an integer between 0 and 255.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF BACKGROUND)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20BACKGROUND%29">(SETF BACKGROUND)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:CLOSING-TAG"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ACLOSING-TAG">CLOSING-TAG</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">MARKUP</li> </ul>  </header> <div class="docstring"><pre>Returns the closing tag that ends the marked up text region.
+
+You should be able to splice this tag after the text region you wish
+to mark up.
+
+Note that the text between the opening-tag and the closing-tag should
+be properly entity-escaped using ESCAPE-CHAR.
+
+See <a href="#FUNCTION%20PANGO-MARKUP%3AESCAPE-CHAR" class="xref">ESCAPE-CHAR</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AOPENING-TAG" class="xref">OPENING-TAG</a>
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:FALLBACK"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFALLBACK">FALLBACK</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses whether fallback font glyphs should be enabled.
+
+This defaults to true and should not need to be changed.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF FALLBACK)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20FALLBACK%29">(SETF FALLBACK)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:FAMILY"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFAMILY">FAMILY</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font family name.
+
+The font family should be a string describing the name of the family of
+font that should be used.
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF FAMILY)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20FAMILY%29">(SETF FAMILY)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:FEATURES"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFEATURES">FEATURES</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font's list of feature settings.
+
+This should be a list of strings describing the desired OpenType
+features, in the same syntax as CSS uses.
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF FEATURES)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20FEATURES%29">(SETF FEATURES)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:FONT"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT">FONT</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font properties of the markup region.
+
+This should be set to an instance of FONT.
+
+When supplied as an initarg, the font may also be a list of initargs
+to use to construct a FONT instance.
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a>
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF FONT)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20FONT%29">(SETF FONT)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:FOREGROUND"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFOREGROUND">FOREGROUND</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the foreground text colour of the markup region.
+
+A colour can either be the name of a colour as a string, an encoded
+RGB integer, or a list of R, G, B, and optional A elements with each
+element being an integer between 0 and 255.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF FOREGROUND)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20FOREGROUND%29">(SETF FOREGROUND)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:GRAVITY"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AGRAVITY">GRAVITY</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the alignment gravity of the markup region.
+
+If set should be either a gravity mode, or a list of gravity mode and
+gravity hint.
+
+The gravity mode can be one of: :south :east :north :west :auto
+The gravity hint can be one of: :natural :strong :line
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF GRAVITY)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20GRAVITY%29">(SETF GRAVITY)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:LANGUAGE"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ALANGUAGE">LANGUAGE</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the language of the markup region.
+
+The value should be a two or three letter ISO language code.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF LANGUAGE)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20LANGUAGE%29">(SETF LANGUAGE)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:LETTER-SPACING"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ALETTER-SPACING">LETTER-SPACING</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the inter-letter spacing of the markup region.
+
+The value should be a float describing the spacing in points.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF LETTER-SPACING)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20LETTER-SPACING%29">(SETF LETTER-SPACING)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:OPENING-TAG"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AOPENING-TAG">OPENING-TAG</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">SPEC</li> </ul>  </header> <div class="docstring"><pre>Returns the opening tag that describes all the markup options.
+
+You should be able to splice this tag before the text region you wish
+to mark up with the given options. The end of the region to be marked
+should be followed by the CLOSING-TAG.
+
+Note that the text between the opening-tag and the closing-tag should
+be properly entity-escaped using ESCAPE-CHAR.
+
+See <a href="#FUNCTION%20PANGO-MARKUP%3AESCAPE-CHAR" class="xref">ESCAPE-CHAR</a>
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ACLOSING-TAG" class="xref">CLOSING-TAG</a>
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:RISE"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ARISE">RISE</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the vertical displacement of the markup region.
+
+This displacement can be positive or negative, and must be in pango
+units.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF RISE)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20RISE%29">(SETF RISE)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:SIZE"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASIZE">SIZE</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the size of the font.
+
+The value can either be a float describing the size in points, or one
+of the following size units:
+
+Absolute: :xx-small :x-small :small :medium :large :x-large :xx-large
+Relative: :smaller :larger
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF SIZE)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20SIZE%29">(SETF SIZE)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:STRETCH"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTRETCH">STRETCH</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font's stretch factor.
+
+Can be one of the following:
+
+  :ultra-condensed :extra-condensed :condensed :semi-condensed
+  :normal :semi-expanded :expanded :extra-expanded :ultra-expanded
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF STRETCH)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20STRETCH%29">(SETF STRETCH)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:STRIKETHROUGH"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTRIKETHROUGH">STRIKETHROUGH</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the strikethrough options of the markup region.
+
+Can be either T or a list of T and the strikethrough colour.
+
+A colour can either be the name of a colour as a string, an encoded
+RGB integer, or a list of R, G, B, and optional A elements with each
+element being an integer between 0 and 255.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF STRIKETHROUGH)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20STRIKETHROUGH%29">(SETF STRIKETHROUGH)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:STYLE"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3ASTYLE">STYLE</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font's style variant.
+
+Can be one of the following:
+
+  :normal :oblique :italic
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF STYLE)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20STYLE%29">(SETF STYLE)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:UNDERLINE"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AUNDERLINE">UNDERLINE</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the underline options of the markup region.
+
+If set should be either an underline mode, or a list of underline mode
+and underline colour. The underline mode should be one of
+
+  :none T :single :double :low :error
+
+Where T is synonymous with :single
+
+The colour can either be the name of a colour as a string, an encoded
+RGB integer, or a list of R, G, B, and optional A elements with each
+element being an integer between 0 and 255.
+
+See <a href="#CLASS%20PANGO-MARKUP%3AMARKUP" class="xref">MARKUP</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF UNDERLINE)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20UNDERLINE%29">(SETF UNDERLINE)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:VARIANT"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AVARIANT">VARIANT</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font's variant.
+
+Can be one of the following:
+
+  :normal :small-caps
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF VARIANT)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20VARIANT%29">(SETF VARIANT)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:WEIGHT"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AWEIGHT">WEIGHT</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><pre>Accesses the font's weight or boldness.
+
+Can be either a numeric weight, or one of the following:
+
+  :ultra-light :light :normal :bold :ultra-bold :heavy
+
+See <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3AFONT" class="xref">FONT</a></pre></div> </article> </li>  <li> <article class="definition generic-function callable" id="GENERIC-FUNCTION PANGO-MARKUP:(SETF WEIGHT)"> <header> <span class="visibility">EXTERNAL</span> <span class="type">GENERIC-FUNCTION</span> <h4 class="name"> <a href="#GENERIC-FUNCTION%20PANGO-MARKUP%3A%28SETF%20WEIGHT%29">(SETF WEIGHT)</a> </h4> <ul class="qualifiers"></ul> <ul class="arguments"> <li class="argument">NEW-VALUE</li>  <li class="argument">OBJECT</li> </ul>  </header> <div class="docstring"><i>No documentation provided.</i></div> </article> </li> </ul> </article> </li> </ul> </section> </article> <script>window.addEventListener("DOMContentLoaded", function(){
+    var unmarkElement = function(el){
+        if(el.tagName === "mark" || el.tagName === "MARK"){
+            [].forEach.call(el.childNodes, function(child){
+                el.parentNode.insertBefore(child, el);
+            });
+            el.parentNode.removeChild(el);
+        }else if(el.parentNode.tagName === "mark"){
+            return unmarkElement(el.parentNode);
+        }
+        return null;
+    }
+
+    var unmarkAll = function(root){
+        root = root || document;
+        [].forEach.call(root.querySelectorAll("mark"), unmarkElement);
+    }
+    
+    var markElement = function(el){
+        if(el.parentNode.tagName === "mark" || el.parentNode.tagName === "MARK"){
+            return el.parentNode;
+        } else {
+            unmarkAll();
+            var marked = document.createElement("mark");
+            el.parentNode.insertBefore(marked, el);
+            marked.appendChild(el);
+            return marked;
+        }
+    }
+
+    var markFragmented = function(){
+        if(window.location.hash){
+            var el = document.getElementById(decodeURIComponent(window.location.hash.substr(1)));
+            if(el) markElement(el);
+        }
+    }
+
+    var registerXrefLink = function(link){
+        var el = document.getElementById(decodeURIComponent(link.getAttribute("href").substr(1)));
+        if(el){
+            link.addEventListener("click", function(){
+                markElement(el);
+            });
+        }
+    }
+
+    var registerXrefLinks = function(root){
+        root = root || document;
+        [].forEach.call(root.querySelectorAll("a.xref"), registerXrefLink);
+    }
+
+    markFragmented();
+    registerXrefLinks();
+}); </script> </body> </html> 
