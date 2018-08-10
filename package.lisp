@@ -8,6 +8,7 @@
   (:nicknames #:org.shirakumo.pango-markup)
   (:use #:cl)
   (:export
+   #:escape-char
    #:font
    #:family
    #:size
@@ -27,5 +28,6 @@
    #:language
    #:letter-spacing
    #:gravity
-   #:tag
+   #:opening-tag
+   #:closing-tag
    #:markup-regions))
