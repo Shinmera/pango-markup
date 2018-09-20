@@ -162,9 +162,9 @@
         (format o "~@[ gravity='~a'~]"
                 (ecase gravity
                   ((NIL))
-                  (:south ":outh")
+                  (:south "south")
                   (:east "east")
-                  (:north ":orth")
+                  (:north "north")
                   (:west "west")
                   (:auto "auto")))
         (format o "~@[ gravity_hint='~/pango-markup::format-escape/'~]"
