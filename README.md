@@ -1,5 +1,5 @@
 ## About Pango-Markup
-This is a small library to handle marking up text in the [Pango-style markup](https://developer.gnome.org/pango/stable/PangoMarkupFormat.html) for you.
+This is a small library to handle marking up text in the [Pango-style markup](https://developer.gnome.org/pango/stable/pango-Markup.html) for you.
 
 ## How To
 Marking up text is fairly easy. All you need to do is invoke `markup-text` with a list of regions and markup descriptions:
