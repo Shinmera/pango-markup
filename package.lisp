@@ -1,9 +1,3 @@
-#|
- This file is a part of pango-markup
- (c) 2018 Shirakumo http://tymoon.eu (shinmera@tymoon.eu)
- Author: Nicolas Hafner <shinmera@tymoon.eu>
-|#
-
 (defpackage #:pango-markup
   (:nicknames #:org.shirakumo.pango-markup)
   (:use #:cl)
