@@ -4,9 +4,9 @@
   :author "Yukari Hafner <shinmera@tymoon.eu>"
   :maintainer "Yukari Hafner <shinmera@tymoon.eu>"
   :description "A small library to generate pango-style text markup."
-  :homepage "https://Shinmera.github.io/pango-markup/"
-  :bug-tracker "https://github.com/Shinmera/pango-markup/issues"
-  :source-control (:git "https://github.com/Shinmera/pango-markup.git")
+  :homepage "https://shinmera.com/docs/pango-markup/"
+  :bug-tracker "https://shinmera.com/project/pango-markup/issues"
+  :source-control (:git "https://shinmera.com/project/pango-markup.git")
   :serial T
   :components ((:file "package")
                (:file "pango")
